@@ -1,14 +1,11 @@
 import React from 'react'
-import './App.css'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
+import Header from '../components/Header'
 
-import { MdCameraAlt, MdImage } from 'react-icons/md'
-
-function App() {
+function Home() {
 	return (
 		<Container>
 			<Row>
@@ -23,18 +20,11 @@ function App() {
 			</Row>
 			<Row>
 				<Col>
-					<Button variant="outline-primary" size="lg">
-						<MdCameraAlt size={30} /> Decode from camera
-					</Button>
-				</Col>
-				<Col>
-					<Button variant="outline-primary" size="lg">
-						<MdImage size={30} /> Decode from image
-					</Button>
+					<Header />
 				</Col>
 			</Row>
 		</Container>
 	)
 }
 
-export default App
+export default Home
