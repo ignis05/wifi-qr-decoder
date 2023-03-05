@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav'
-import { MdCameraAlt, MdImage } from 'react-icons/md'
+import { MdHome, MdCameraAlt, MdImage } from 'react-icons/md'
 
 function Header() {
 	const navigate = useNavigate()
@@ -13,13 +13,19 @@ function Header() {
 	return (
 		<Nav onSelect={handleSelect} variant="pills" defaultActiveKey="/">
 			<Nav.Item>
-				<Nav.Link eventKey="/">Home</Nav.Link>
+				<Nav.Link eventKey="/">
+					<MdHome /> Home
+				</Nav.Link>
 			</Nav.Item>
 			<Nav.Item>
-				<Nav.Link eventKey="/img">From Image</Nav.Link>
+				<Nav.Link eventKey="/img">
+					<MdImage /> From Image
+				</Nav.Link>
 			</Nav.Item>
 			<Nav.Item>
-				<Nav.Link eventKey="/cam">From Camera</Nav.Link>
+				<Nav.Link eventKey="/cam">
+					<MdCameraAlt /> From Camera
+				</Nav.Link>
 			</Nav.Item>
 		</Nav>
 	)
