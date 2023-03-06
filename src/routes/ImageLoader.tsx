@@ -10,9 +10,11 @@ function ImageLoader() {
 	const [wifi, setWifi] = useState(new Wifi(''))
 
 	const handleFile = async (file: File) => {
-		let result = await QrScanner.scanImage(file).catch((error) => console.log(error || 'No QR code found.'))
+		let result = await QrScanner.scanImage(file, { returnDetailedScanResult: true }).catch((error) =>
+			console.log(error || 'No QR code found.')
+		)
 		if (!result) return
-		let newWifi = new Wifi(result)
+		let newWifi = new Wifi(result.data)
 		if (newWifi.isValid) setWifi(newWifi)
 	}
 
