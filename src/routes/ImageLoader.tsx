@@ -21,8 +21,11 @@ function ImageLoader() {
 	return (
 		<div className="d-flex flex-column gap-5">
 			<Header />
-			<FileInput onFile={handleFile} />
-			{wifi.isValid && <WifiCard wifi={wifi} />}
+			<div className="px-3">
+				<FileInput onFile={handleFile} />
+				<div className='mt-5'></div>
+				{wifi.isValid && <WifiCard wifi={wifi} />}
+			</div>
 		</div>
 	)
 }

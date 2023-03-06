@@ -16,7 +16,7 @@ function Header() {
 		<Nav onSelect={handleSelect} variant="pills" defaultActiveKey={`${location.pathname}`}>
 			<Nav.Item>
 				<Nav.Link eventKey={`${process.env.REACT_APP_HOME_PAGE}/`}>
-					<MdHome /> Home
+					<MdHome />
 				</Nav.Link>
 			</Nav.Item>
 			<Nav.Item>

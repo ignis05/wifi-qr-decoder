@@ -8,9 +8,7 @@ import Wifi from '../models/Wifi.model'
 
 function CamLoader() {
 	const videoRef = createRef<HTMLVideoElement>()
-	// var qrScanner: QrScanner | null = null
 	const [qrScanner, setqrScanner] = useState<QrScanner | null>(null)
-	// var cameras: QrScanner.Camera[] = []
 	const [cameras, setcameras] = useState<QrScanner.Camera[]>([])
 	const [activeCamera, setactiveCamera] = useState<QrScanner.Camera | null>(null)
 	const [wifi, setWifi] = useState(new Wifi(''))
@@ -45,16 +43,16 @@ function CamLoader() {
 			setactiveCamera(null)
 		}
 
-		if (qrScanner && isScannerActive)
-			qrScanner.start().then(async () => {
-				setcameras(await QrScanner.listCameras(true))
-			})
+		if (qrScanner && isScannerActive) qrScanner.start().then(async () => {})
 	}, [qrScanner, isScannerActive])
 
 	// set camera after updating cam list
 	useEffect(() => {
-		setactiveCamera(cameras[0])
-	}, [cameras])
+		if (qrScanner && cameras.length > 0) {
+			qrScanner.setCamera(cameras[0].id)
+			setactiveCamera(cameras[0])
+		}
+	}, [cameras, qrScanner])
 
 	// cycle through available cameras
 	const cycleCamera = async () => {
@@ -67,19 +65,22 @@ function CamLoader() {
 	}
 
 	return (
-		<>
+		<div className="d-flex flex-column gap-5">
 			<Header />
-			<div className="d-flex flex-row">
-				<Button onClick={openCamera}>{!isScannerActive ? 'Open Camera' : 'Stop'}</Button>
-				{activeCamera && (
-					<Button onClick={cycleCamera}>
-						<MdCameraswitch /> {`Using cam: ${activeCamera.label}`}
-					</Button>
-				)}
+			<div className="px-3">
+				<div className="d-flex flex-row">
+					<Button onClick={openCamera}>{!isScannerActive ? 'Open Camera' : 'Stop'}</Button>
+					{activeCamera && (
+						<Button onClick={cycleCamera}>
+							<MdCameraswitch /> {`Using cam: ${activeCamera.label}`}
+						</Button>
+					)}
+				</div>
+				<video style={{ width: '100%', height: isScannerActive ? '100%' : '1px' }} ref={videoRef}></video>
+				<div className="mt-5"></div>
+				{wifi.isValid && <WifiCard wifi={wifi} />}
 			</div>
-			{wifi.isValid && <WifiCard wifi={wifi} />}
-			<video style={{ width: '100%', height: '100%' }} ref={videoRef}></video>
-		</>
+		</div>
 	)
 }
 
