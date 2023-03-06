@@ -27,6 +27,7 @@
 		"test": "react-scripts test",
 		"deploy": "sh deploy.sh"
 	},
+	"homepage": "https://ignis05.github.io/wifi-qr-decoder",
 	"eslintConfig": {
 		"extends": [
 			"react-app",

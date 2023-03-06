@@ -1,21 +1,21 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import CamLoader from './routes/CamLoader'
 
 import Home from './routes/Home'
 import ImageLoader from './routes/ImageLoader'
+import CamLoader from './routes/CamLoader'
 
 const router = createBrowserRouter([
 	{
-		path: '/',
+		path: process.env.REACT_APP_HOME_PAGE,
 		element: <Home />,
 	},
 	{
-		path: 'img',
+		path: process.env.REACT_APP_HOME_PAGE + '/img',
 		element: <ImageLoader />,
 	},
 	{
-		path: 'cam',
+		path: process.env.REACT_APP_HOME_PAGE + '/cam',
 		element: <CamLoader />,
 	},
 ])
