@@ -18,13 +18,17 @@ function ImageLoader() {
 		if (newWifi.isValid) setWifi(newWifi)
 	}
 
+	const handleWifiCardClose = () => {
+		setWifi(new Wifi(''))
+	}
+
 	return (
 		<div className="d-flex flex-column gap-2">
 			<Header />
 			<div className="px-3">
 				<FileInput onFile={handleFile} />
-				<div className='mt-5'></div>
-				{wifi.isValid && <WifiCard wifi={wifi} />}
+				<div className="mt-5"></div>
+				{wifi.isValid && <WifiCard wifi={wifi} onClose={handleWifiCardClose} />}
 			</div>
 		</div>
 	)

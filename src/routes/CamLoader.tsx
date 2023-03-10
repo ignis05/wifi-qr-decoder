@@ -64,6 +64,10 @@ function CamLoader() {
 		qrScanner.setCamera(cameras[i].id)
 	}
 
+	const handleWifiCardClose = () => {
+		setWifi(new Wifi(''))
+	}
+
 	return (
 		<div className="d-flex flex-column gap-2">
 			<Header />
@@ -78,7 +82,7 @@ function CamLoader() {
 				</div>
 				<video style={{ width: '100%', height: isScannerActive ? '100%' : '1px', maxHeight: 'calc(100vh - 100px)' }} ref={videoRef}></video>
 				<div className="mt-5"></div>
-				{wifi.isValid && <WifiCard wifi={wifi} />}
+				{wifi.isValid && <WifiCard wifi={wifi} onClose={handleWifiCardClose} />}
 			</div>
 		</div>
 	)
