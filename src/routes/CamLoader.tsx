@@ -65,7 +65,7 @@ function CamLoader() {
 	}
 
 	return (
-		<div className="d-flex flex-column gap-5">
+		<div className="d-flex flex-column gap-2">
 			<Header />
 			<div className="px-3">
 				<div className="d-flex flex-row">
@@ -76,7 +76,7 @@ function CamLoader() {
 						</Button>
 					)}
 				</div>
-				<video style={{ width: '100%', height: isScannerActive ? '100%' : '1px' }} ref={videoRef}></video>
+				<video style={{ width: '100%', height: isScannerActive ? '100%' : '1px', maxHeight: 'calc(100vh - 100px)' }} ref={videoRef}></video>
 				<div className="mt-5"></div>
 				{wifi.isValid && <WifiCard wifi={wifi} />}
 			</div>

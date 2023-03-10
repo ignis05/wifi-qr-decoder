@@ -1,0 +1,23 @@
+@import 'bootstrap/scss/_functions';
+@import 'bootstrap/scss/_variables';
+@import 'bootstrap/scss/mixins/_breakpoints';
+
+.imgWrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	max-width: calc(100vw - 1rem);
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.imgWrapper > img {
+	height: 90px;
+}
+
+@include media-breakpoint-up(sm) {
+	.imgWrapper > img {
+		height: 200px;
+		flex: 0 0;
+	}
+}

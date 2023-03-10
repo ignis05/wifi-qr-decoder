@@ -19,7 +19,7 @@ function ImageLoader() {
 	}
 
 	return (
-		<div className="d-flex flex-column gap-5">
+		<div className="d-flex flex-column gap-2">
 			<Header />
 			<div className="px-3">
 				<FileInput onFile={handleFile} />
