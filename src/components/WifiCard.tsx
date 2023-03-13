@@ -4,6 +4,7 @@ import Wifi from '../models/Wifi.model'
 import CloseButton from 'react-bootstrap/CloseButton'
 
 function WifiCard(props: { wifi: Wifi; onClose?: MouseEventHandler<HTMLButtonElement> }) {
+	if (!props.wifi.isValid) return <div>No wifi data found in qrCode: {props.wifi.qrData}</div>
 	return (
 		<Card style={{ width: '18rem' }} border="success">
 			<Card.Header className="d-flex justify-content-between">
