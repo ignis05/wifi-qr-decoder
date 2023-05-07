@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/wifi-qr-decoder/static/css/main.5ef071d2.css",
+    "main.js": "/wifi-qr-decoder/static/js/main.cc3acfcf.js",
+    "static/js/684.8f8740ba.chunk.js": "/wifi-qr-decoder/static/js/684.8f8740ba.chunk.js",
+    "static/js/787.4c2c89f4.chunk.js": "/wifi-qr-decoder/static/js/787.4c2c89f4.chunk.js",
+    "index.html": "/wifi-qr-decoder/index.html",
+    "main.5ef071d2.css.map": "/wifi-qr-decoder/static/css/main.5ef071d2.css.map",
+    "main.cc3acfcf.js.map": "/wifi-qr-decoder/static/js/main.cc3acfcf.js.map",
+    "684.8f8740ba.chunk.js.map": "/wifi-qr-decoder/static/js/684.8f8740ba.chunk.js.map",
+    "787.4c2c89f4.chunk.js.map": "/wifi-qr-decoder/static/js/787.4c2c89f4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ef071d2.css",
+    "static/js/main.cc3acfcf.js"
+  ]
+}
